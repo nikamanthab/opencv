@@ -1,0 +1,39 @@
+they are distortions in an image
+types:
+
+    a.affine - preseve parallelism
+        
+        1.scaling:
+        
+            cv2.resize(image, dsize(output image size), xscale, yscale , interpolation)
+        
+        2.rotation:
+        
+            cv2.getRotationMatrix2D(rot_center_x,rot_center_y,angle of rot,scale) // could get canvas bound problems
+            so can use:
+                cv2.transpose(img) //this can be used instead
+        
+        3.translation:
+           
+           shift the start point of the img by tx and ty distance
+            T = |1 0 Tx|
+                |0 1 Ty|
+            T = np.float32([[1,0,Tx],[0,1,Ty]])
+            Translatedimg = cv2.wrapAffine(image , T , (width,height))
+            
+            
+    b.non-affine - dont preseve parallelism
+        also known as projective/homgraphy transforms
+        
+wrapAffine -- method used in all transformations 
+
+interpolation:
+    this is a methos of constructing new data points within the range of a discrete set of known data points 
+    types:
+        cv2.INTER_AREA
+                NEAREST
+                LINEAR
+                CUBIC
+                LANCZOS4-best
+
+   

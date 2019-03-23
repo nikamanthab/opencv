@@ -1,0 +1,30 @@
+types:
+    by area
+    by spatial position
+    
+
+area function:
+    cv2.contourArea(counter)
+    
+sorting:
+sorted_contours = sorted(contours, key=cv2.contourArea, reverse=True)
+syntax:
+    sorted(array, function, reverse=True)  //reverse=True for descending order
+    
+    
+moments():
+    is used to get the centroid or the area of an object
+    
+    centroid:
+         cx = int(M['m10']/M['m00'])
+         cy = int(M['m01']/M['m00'])
+         
+printing text:
+    cv2.putText(img, str, (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (234,22,0), 2)
+    
+cropping contours:
+    (x,y,w,h) = cv2.boundingRect(contour)
+    cropped_contour = original_image[y:y+h, x:x+w]
+    
+
+    

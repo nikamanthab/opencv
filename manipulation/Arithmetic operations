@@ -1,0 +1,14 @@
+it is adding or substracting matrices from the image
+
+M = np.ones(image.shape , "uint8") * 75
+added = cv2.add(image,M)  ---> image becomes darker
+substracted = cv2.substract(image,M)  ---> image becomes lighter
+
+
+
+Bitwise Operations:
+
+or = bitwise_or(img1,img2)
+and = bitwise_and(img1,img2)
+xor = bitwise_xor(img1,img2)
+not = bitwise_not(img1)

@@ -1,0 +1,14 @@
+edge:
+    sudden changes or discontinuties in an image
+    
+    3 diff models:
+        1.Sobel - to emphasize vertical or horizontal edges
+        2.Laplacian - gets all orientations
+        3.Canny - Optimal due to low error rate, well defined edges and accurate detection
+        
+        in canny:
+        canny = cv2.Canny(image,threshold1,threshold2)
+        
+        1.any gradient value greater than threshold2 is considered to be an edge.
+        2.any value below threshold1 is considered not to be an edge.
+        3.values in between threshold1 and threshold2 are either classified  as edges or non edges based on how their intensities are connected

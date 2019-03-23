@@ -1,0 +1,39 @@
+Used to detect lanes in self driving cars
+
+Line is represented as:
+    p = xcost + ysint
+    
+    p - perpendicular distance from the origin
+    t - angle between x axis and the perpendicular line(in radians)
+    
+Hough lines:
+    gray scale the image
+    canny to reduce the noise
+    
+    lines = cv2.HoughLines(edges, 1, np.pi/180, 120)
+    returns a list of [rho,theta]
+    
+    Syntax:
+        cv2.HoughLines(binarized/thresholded image,rho image,theta accuracy,threshold)
+        threshold here is the min vote for it to be considered a line
+    
+    To find and draw the lines:
+        a = np.cos(theta)
+        b = np.sin(theta)
+        x0 = a * rho
+        y0 = b * rho
+        x1 = int(x0 + 1000*(-b))
+        y1 = int(y0 + 1000*(a))
+        x2 = int(x0 - 1000*(-b))
+        y2 = int(y0 - 1000*(a))
+        cv2.line(image, (x1, y1),(x2,y2), (255,0,0),2)
+
+
+Probabilistic hough lines:
+    gray scale
+    canny to reduce noise
+    
+    lines = cv2.HoughLinesP(edges, 1, np.pi/180, 100, 0, 0)
+    
+    Syntax:
+        lines = cv2.HoughLinesP(binarized/thresholded image,rho image,theta accuracy,threshold, min line length, max line gap)

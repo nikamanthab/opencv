@@ -1,0 +1,28 @@
+converting a "grayscale" image into binary image
+segmenting 0-255 into two and assigned binary values 0,1 for each range
+
+Syntax:
+    ret,thresh = cv2.threshold(image,Threshold value,max value,type)
+    
+Types:
+    cv2.THRESH_BINARY
+    cv2.THRESH_BINARY_INV
+    cv2.THRESH_TRUNC
+    cv2.THRESH_TOZERO
+    cv2.THRESH_TOZERO_INV
+    
+    Adaptive thresholding:
+        Adaptive mean thresholding
+        Otsu's thresholding
+        Gaussian Otsu's thresholding
+    
+blurring of image can reduce the noise:///////important
+    
+    image = cv2.GaussianBlur(image,(3,3),0)
+    
+blur = cv2.GaussianBlur(image,(3,3),0)
+_,thresh = cv2.threshold(blur,0,255,cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+cv2.imshow("guassian otsu",thresh)
+
+
+This technique can be used to remove watermarks from the image

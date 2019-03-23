@@ -1,0 +1,8 @@
+to highlight more on the edges.
+
+kernel_sharpening = np.array([[-1,-1,-1],
+                              [-1,9,-1],
+                              [-1,-1,-1]])
+                              
+                              //sum of the matrix elements is 1
+sharpened = cv2.filter2D(image,-1,kernel_sharpening)

@@ -1,0 +1,28 @@
+it is a 3d array
+l , w , 3 colors - dimensions
+
+import cv2 // to import the opencv package
+
+reading:
+this will return an 3d array
+input = cv2.imread('path+filename')
+
+display:
+cv2.imshow('title',read_img)
+
+save:
+cv2.imwrite('outputfilename' , img var)
+
+shape:
+input.shape // gives [l,w,colors]
+
+waitkey:
+cv2.waitkey(time) // if time is not defined it waits till next entry
+
+destroywindows:
+cv2.destroyAllWindows()
+//if thisis not included then the window will stay and cause the kernel problem
+
+
+
+

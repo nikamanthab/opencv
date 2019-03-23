@@ -1,0 +1,34 @@
+Partition images into different regions
+
+CONTOURS are continuous lines or curves that bound or cover the full boundary of an image
+
+important for:
+    object detection
+    shape analysis
+    
+contour generation:
+grayscale the img -- necessary because the contour func takes in grayscale image
+find canny edges -- not necessary but to reduce noise
+
+ret,thresh = cv2.threshold(gray,127,255,0) - threshold the image before applying contouring
+
+Syntax:
+    contouredimg = edges.copy()
+    im2, contours, heirarchy = cv2.findContours(contouredimg, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    Syntax:
+        im2, contours, heirarchy = cv2.findContours(contouredimg, retrival mode, approximation mode)
+        
+        approximation mode:
+        CHAIN_APPROX_NONE - has all the main points in the contour
+        CHAIN_APPROX_SIMPLE - has all the end vertices
+        
+        retrival modes:
+        cv2.RETR_LIST - all contours
+        *cv2.RETR_EXTERNAL - outer contours only
+        cv2.RETR_COMP - all in a 2-level hierarchy
+        *cv2.RETR_TREE - all in full hierarchy
+    
+Drawing contours:
+    cv2.drawContours(image,contours,-1,(211,0,148),3)
+    Syntax:
+        cv2.drawContours(image, contours, countours index, colour of contour, line thickness)

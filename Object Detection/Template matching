@@ -1,0 +1,20 @@
+It is used to find a piece of a image is present in the particular larger image
+
+result = cv2.matchTemplate(gray,template,cv2.TM_CCOEFF)
+min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
+
+correlation coefficient - TM_CCOEFF
+there are many others too
+
+
+To represent the image:
+    topleft = max_loc
+    bottomright = (topleft[0]+50,topleft[1]+50)
+    cv2.rectangle(image,topleft,bottomright,(225,25,0),5)
+    
+Disadv:
+    affected by:
+        rotation
+        size
+        photometric changes
+        distortions from view point change

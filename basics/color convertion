@@ -1,0 +1,22 @@
+gray scaling:
+
+grayimg = cv2.cvtColor(image , cv2.COLOR_BGR2GRAY)
+or
+gray = cv2.imread(input , 0)
+
+hsv:
+
+COLOR_BGR2HSV  -- for converting
+returns 3d array -- l,w,no 
+    if no=0 hue channel
+    if n0=1 saturation
+    if n=2 value
+    
+b,g,r = cv2.split(image) -- splits into each color
+
+mergedimg = cv2.merge([b,g,r])  -- to combine all the components
+
+to get diff color only:
+b,g,r = cv2.split(image)
+zeros = np.zeros(image.shape[:2],dtype = "uint8")
+cv2.imshow("red",cv2.merge([zeros,zeros,r])

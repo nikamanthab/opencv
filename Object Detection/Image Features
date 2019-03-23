@@ -1,0 +1,15 @@
+They are the information containing points
+key points    interestpoints
+
+noise can be misunderstood for features - so should be reduced
+
+Characteristics:
+    shd be found in multiple imgs
+    each shd be unique
+    shd occupy less pixels than the whole img
+    
+    
+edges and corners:
+    they are considered as the most important features
+    the edges have the change in intensity in one direction
+    the corner have change in intensity in 3 direction

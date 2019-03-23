@@ -1,0 +1,8 @@
+pyramid images:
+ 
+     cv2.pyrDown(image) // scales to half of original
+     cv2.pyrUp(image)  // scales to twice of original
+        //can loose clarity
+        
+cropping:
+    cropimg = image[startrow:endrow , startcol:endcol]

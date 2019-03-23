@@ -1,0 +1,21 @@
+background canvas:
+    can be created by using zeros function
+    image = np.zeros((l,w,no of colors),np.uint8 //or "uint8")
+
+line , rectangle:
+    cv2.line(backgroundimg , (x,y)start , (x,y)end , (b,g,r) , thickness)
+    //-1 --fill for rectangle
+
+cicle:
+    in circle start and end coordinates are replaced by
+    center coordinates and radius
+    
+polygen:
+    #lets define 4 point
+    pts = np.array([[10,50],[400,50],[90,200],[50,500]], np.int32)
+    #lets now reshape our points in form required by polylines
+    pts = pts.reshape((-1,1,2))
+    cv2.polylines(image,[pts],True,(0,0,255),3)
+   
+text:
+    cv2.putText(image , 'text to display' , bottom left starting point , font , font size , color , thickness)

@@ -1,0 +1,8 @@
+circles = cv2.HoughCircles(blur, cv.CV_HOUGH_GRADIENT, 1.5, 10)
+
+for i in circles[0,:]:
+       # draw the outer circle
+       cv2.circle(image,(i[0], i[1]), i[2], (255, 0, 0), 2)
+      
+       # draw the center of the circle
+       cv2.circle(image, (i[0], i[1]), 2, (0, 255, 0), 5)

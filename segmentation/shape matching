@@ -1,0 +1,6 @@
+cv2.matchShapes(contour template, contour, method, method parameter)
+
+contour template - refernce contour that we are trying to find in the new image
+contour - contour we are checking against
+method - type of contour matching (1,2,3)
+method parameter - leave alone as 0.0

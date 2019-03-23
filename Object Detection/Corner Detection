@@ -1,0 +1,27 @@
+harris corner detection:
+    convert the image into grayscale
+    convert into float 32
+        f32gray = np.float32(image)
+    harris_corners = cv2.cornerHarris(f32gray, 3, 3, 0.05)
+
+    //have to complete
+
+
+good features to track: --- better way
+    corners = cv2.goodFeaturesToTrack(image,100000,0.01,15)
+    syntax:
+        corners = cv2.goodFeaturesToTrack(image,maxcorners,qualitylevel,mindistance)
+        quality level - minimum accepted quality of the image
+        maxcorners - max no of corners that can be identified
+        
+        maxcorners*qualitylevel - the corners with lesser than the product as its quality are rejected.
+        minDistance - min dist bet two corners
+        
+       
+    
+    for corner in corners:
+        x,y = corner[0]
+        x = int(x)
+        y = int(y)
+        
+        x,y -- are the coordinates of the corner

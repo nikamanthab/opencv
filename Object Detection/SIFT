@@ -1,0 +1,19 @@
+SIFT:
+    it stands for scale invariant feature transform
+
+    find the interesting points using gaussian method
+    create vector descriptive of the interesting areas
+
+    interesting points are scanned at several diff scales
+        rat invariance is achieved by obtaining the orientation assignment using gradient magnitude
+        
+SURF:
+    speeded up robust features
+    it is fater than SIFT
+    it uses hessian matrix approach
+    
+FAST - key point detection only
+BRIEF - descriptors quickly
+ORB - combination of both FAST and BRIEF
+
+create detector -> input image into the detector -> obtain key points -> draw key points

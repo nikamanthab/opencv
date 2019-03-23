@@ -1,0 +1,10 @@
+dilation - adds pixals to the boundaries of object in an image
+erosion - removes pixels at the boundaries of objects inan image
+opening - erosion followed by dilation
+closing -  dilation followed by erosion
+
+kernal = np.ones((5,5),np.uint8)
+erosion = cv2.erode(image,kernal,iteration=1)
+             /.dilate
+opening = cv2.mrphologyEx(image,cv2.MORPH_OPEN,kernal)
+closing = cv2.morphologyEx(image,cv2.MORPH_CLOSE,kernal)
